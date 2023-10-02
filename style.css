@@ -30,10 +30,30 @@ section {
 .loader span::before {
   content: '';
   position: absolute;
+  top: calc(-15px / 2);
   width: 15px;
   height: 15px;
   background: #00ff0a;
   border-radius: 50%;
   box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a,
     0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+  animation: animate 5s linear infinite;
+  animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(200px) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
 }
